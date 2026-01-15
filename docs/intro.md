@@ -1,47 +1,16 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
-# Tutorial Intro
+# 👋 欢迎来到 AI 知识库
 
-Let's discover **Docusaurus in less than 5 minutes**.
+这里是 **AI Course** 的核心知识库。我将在这里整理关于 AI 效率工具、提示词工程以及全栈开发的系统化教程。
 
-## Getting Started
+## 📚 知识板块规划
 
-Get started by **creating a new site**.
+*   **🚀 效率工具箱**：收录 ChatGPT, Claude, Midjourney 等工具的最佳实践。
+*   **💻 全栈开发实战**：从零搭建属于你的数字产品（就像这个网站）。
+*   **🧠 提示词工程**：Copy & Paste 即用的高质量 Prompt 库。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+> 🚧 **建设中**：内容正在持续更新，请关注我的博客获取最新动态。

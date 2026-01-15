@@ -1,45 +1,40 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  // ==================================================================
+  // 1. 基础网站信息
+  // ==================================================================
+  title: 'AI Course - 全栈 AI 效率知识库',
+  tagline: '让 AI 成为你的第二大脑',
+  favicon: 'img/logo.jpg',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
-
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // 生产环境 URL (必须和你的域名一致)
+  url: 'https://aicourse.unnomad.com',
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // GitHub Pages 配置
+  organizationName: 'lo11ol',
+  projectName: 'ai-course',
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // 国际化设置
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
+  future: {
+    v4: true,
+  },
+
+
+  // ==================================================================
+  // 3. 预设配置 (文档、博客、主题)
+  // ==================================================================
   presets: [
     [
       'classic',
@@ -47,22 +42,19 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          sidebarCollapsible: true,
+          // editUrl: 'https://github.com/lo11ol/ai-course/tree/main/',
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: '最新文章',
+          blogSidebarCount: 'ALL',
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
+            copyright: `Copyright © ${new Date().getFullYear()} AI Course`,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
+          // editUrl: 'https://github.com/lo11ol/ai-course/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -74,83 +66,87 @@ const config = {
     ],
   ],
 
+  // ==================================================================
+  // 4. 主题 UI 配置 (导航栏、页脚、SEO)
+  // ==================================================================
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+
+      // 全局 SEO 元数据
+      metadata: [
+        {name: 'keywords', content: 'AI教程, 人工智能, 效率工具, 知识库, Docusaurus, 全栈开发, Python, 提示词'},
+        {name: 'description', content: '专注于 AI 效率工具与全栈开发的个人知识库，帮助非技术人员构建第二大脑。'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'},
+      ],
+
       colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
         respectPrefersColorScheme: true,
       },
+
+      // 导航栏
       navbar: {
-        title: 'My Site',
+        title: 'AI Course',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'AI Course Logo',
+          src: 'img/logo.jpg',
+          style: { borderRadius: '50%' }
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'AI 知识库',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '博客 & 思考', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/lo11ol/ai-course',
             label: 'GitHub',
             position: 'right',
           },
         ],
       },
+
+      // 页脚
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '📚 知识板块',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
+              { label: 'AI 基础教程', to: '/docs/' },
+              { label: '效率工具箱', to: '/blog' },
+              { label: '全栈开发实战', to: '/blog/tags/全栈开发' },
             ],
           },
           {
-            title: 'Community',
+            title: '🤝 关注我',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
+              { label: '微信公众号', href: 'https://mp.weixin.qq.com/' },
+              { label: 'Bilibili', href: 'https://space.bilibili.com/7421761' },
+              { label: 'Email', href: 'mailto:a-.-@outlook.com' },
             ],
           },
           {
-            title: 'More',
+            title: '🔗 更多',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
+              { label: '博客归档', to: '/blog/archive' },
+              { label: 'GitHub 仓库', href: 'https://github.com/lo11ol/ai-course' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AI Course. Built with Docusaurus.`,
       },
+
+      // 代码高亮
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['python', 'bash', 'json', 'yaml'],
       },
     }),
 };

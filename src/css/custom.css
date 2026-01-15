@@ -28,3 +28,40 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* =========================================
+   以下是新增的自定义样式 (Custom Styles)
+   ========================================= */
+
+/* 1. 导航栏 Logo 圆角化 */
+/* 这会让你的 Bilibili 头像显示为圆形，看起来更像个人品牌 */
+.navbar__logo img {
+  border-radius: 50%;
+  /* 如果觉得图片太大或太小，可以取消下面这行的注释并修改数值 */
+  /* height: 2.5rem; */
+}
+
+/* 2. 移动端图片自适应 (Mobile Image Fix) */
+/* 强制文章内的图片最大宽度不超过屏幕，防止手机端左右横向滚动 */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* 给文章里的图片也加一点圆角，更好看 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 给图片加一点阴影，增加立体感 */
+}
+
+/* 3. 移动端表格优化 (Mobile Table Fix) */
+/* 让表格在手机上可以左右滑动，而不是挤压变形 */
+.markdown table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap; /* 保持单元格内容不换行，保证表格结构 */
+}
+
+/* 4. 首页 Hero 区域微调 (可选) */
+/* 让首页的大标题在手机上不要太大 */
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+}

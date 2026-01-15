@@ -23,3 +23,9 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+me:
+  name: 你的名字
+  title: 全栈 AI 开发者
+  url: https://github.com/lo11ol
+  image_url: https://github.com/lo11ol.png
