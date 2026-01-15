@@ -118,7 +118,7 @@ const config = {
           {
             title: '📚 知识板块',
             items: [
-              { label: 'AI 基础教程', to: '/docs/' },
+              { label: 'AI 基础教程', to: '/docs' },
               { label: '效率工具箱', to: '/blog' },
               { label: '全栈开发实战', to: '/blog/tags/全栈开发' },
             ],
